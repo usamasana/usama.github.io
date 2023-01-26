@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<body>
+<h1 style = "text-align:center;">The Tower of Hanoi Problem</h1>
+<form>
+  <label for="n">Enter the value of n:</label>
+  <input type="text" id="n" name="n">
+  <label for="m">Enter the value of m:</label>
+  <input type="text" id="m" name="m">
+  <button type="button" id="run-code-button" onclick="runHanoiTower()" >Run Code</button>
+  <label for="outputText">Steps:</label>
+  <!--button type="button" id="run-code-button">Run Code</button-->
+  <textarea id="output" rows="10" cols="30" readonly></textarea>
+</form>
+
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+
+<script>
+    function hanoiTower(numDisks, moveM) {
+        var steps = "";
+		function HANOI1(n, o, d, h, m) {
+			var t = Math.pow(2, n - 1);
+			if (m == t) {
+				steps += "Move disk " + n + " from " + o + " to " + d + "\n";
+			} else if (m < t) {
+				HANOI1(n - 1, o, h, d, m);
+			} else {
+				HANOI1(n - 1, h, d, o, m - t);
+			}
+		}
+        HANOI1(numDisks, "Origin Rod", "Destination Rod", "Helper Rod", moveM);
+        return steps;
+    }
+    function runHanoiTower() {
+        var numDisks = document.getElementById("n").value;
+		var moveM = document.getElementById("m").value;
+        var steps = hanoiTower(numDisks,moveM);
+        document.getElementById("output").value = steps;
+    }
+</script>
+
+</body>
+</html>
+
+

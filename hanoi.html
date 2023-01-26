@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<body>
+<h1 style = "text-align:center;">The Tower of Hanoi Problem</h1>
+<form>
+  <label for="n">Enter the value of n:</label>
+  <input type="text" id="n" name="n">
+  <button type="button" id="run-code-button" onclick="runHanoiTower()" >Run Code</button>
+  <label for="outputText">Steps:</label>
+  <!--button type="button" id="run-code-button">Run Code</button-->
+  <textarea id="output" rows="10" cols="30" readonly></textarea>
+</form>
+
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<script>
+    function hanoiTower(numDisks) {
+        var steps = "";
+
+        function moveTower(num, start, end, temp) {
+			if (num<1){
+				steps ="Please Enter Integer >=1";
+			}else{
+			
+				if (num == 1) {
+					steps += "Move disk 1 from " + start + " to " + end + "\n";
+				} else {
+					moveTower(num - 1, start, temp, end);
+					steps += "Move disk " + num + " from " + start + " to " + end + "\n";
+					moveTower(num - 1, temp, end, start);
+				}
+			}
+				
+        }
+        moveTower(numDisks, "A", "C", "B");
+        return steps;
+    }
+    function runHanoiTower() {
+        var numDisks = document.getElementById("n").value;
+        var steps = hanoiTower(numDisks);
+        document.getElementById("output").value = steps;
+    }
+</script>
+
+</body>
+</html>
+
+

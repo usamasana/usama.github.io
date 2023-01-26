@@ -1,0 +1,47 @@
+form {
+  width: 50%; /* set the width of the form */
+  margin: 0 auto; /* center the form on the page */
+  padding: 20px; /* add some padding to the form */
+  background-color: #f2f2f2; /* add a background color to the form */
+  border: 1px solid #ccc; /* add a border to the form */
+  border-radius: 4px; /* add rounded corners to the form */
+}
+
+label {
+  font-size: 18px; /* set the font size of the label */
+  font-weight: bold; /* set the font weight of the label */
+}
+
+input[type="text"] {
+  width: 100%; /* make the text input fill the entire width of the form */
+  padding: 12px 20px; /* add some padding to the text input */
+  margin: 8px 0; /* add some margin to the text input */
+  box-sizing: border-box; /* include the padding and border in the total width and height of the element */
+  border: 1px solid #ccc; /* add a border to the text input */
+  border-radius: 4px; /* add rounded corners to the text input */
+}
+
+button[type="button"] {
+  width: 100%; /* make the button fill the entire width of the form */
+  background-color: #4CAF50; /* set the background color of the button */
+  color: white; /* set the text color of the button */
+  padding: 14px 20px; /* add some padding to the button */
+  margin: 8px 0; /* add some margin to the button */
+  border: none; /* remove the border from the button */
+  border-radius: 4px; /* add rounded corners to the button */
+  cursor: pointer; /* change the cursor to a hand when hovering over the button */
+}
+
+button[type="button"]:hover {
+  background-color: #45a049; /* change the background color of the button when hovering */
+}
+
+#output {
+  width: 100%; /* make the text area fill the entire width of the form */
+  padding: 12px 20px; /* add some padding to the text area */
+  margin: 8px 0; /* add some margin to the text area */
+  box-sizing: border-box; /* include the padding and border in the total width and height of the element */
+  border: 1px solid #ccc; /* add a border to the text area */
+  border-radius: 4px; /* add rounded corners to the text area */
+  resize: none; /* prevent the user from resizing the text area */
+}
